@@ -1,6 +1,6 @@
 @import "modern-normalize/modern-normalize.css";
 
-:root {    
+:root {
   /* Colors */
   --color-interactive-bg-primary-default: light-dark(#FFD900, #FCD601);
   --color-interactive-bg-primary-hover: light-dark(#FFE260, #FFF3C6);

@@ -48,6 +48,7 @@ const classes = computed(() => [
 
 <style scoped>
 .button {
+  text-rendering: geometricPrecision;
   font-family: var(--font-family);
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-bold);
