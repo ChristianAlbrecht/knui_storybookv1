@@ -18,7 +18,9 @@ const meta: Meta<typeof Button> = {
     leadingIcon: { control: "text" },
     trailingIcon: { control: "text" },
     disabled: { control: "boolean" },
-    onClick: { action: "clicked" },
+  },
+  args: {
+    onClick: (event) => console.warn("Button clicked", event),
   },
 };
 

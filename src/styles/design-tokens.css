@@ -2,20 +2,20 @@
 
 :root {
   /* Colors */
-  --color-interactive-bg-primary-default: light-dark(#FFD900, #FCD601);
-  --color-interactive-bg-primary-hover: light-dark(#FFE260, #FFF3C6);
-  --color-interactive-bg-primary-disabled: light-dark(#E0E0E0, #4D4D4D);
-  --color-interactive-bg-secondary-default: transparent;
-  --color-interactive-bg-secondary-hover: light-dark(rgba(3, 3, 3, 0.08), rgba(77, 77, 77, 0.72));
-  --color-interactive-bg-tertiary-default: transparent;
-  --color-interactive-bg-tertiary-hover: light-dark(rgba(3, 3, 3, 0.08), rgba(77, 77, 77, 0.72));
-  --color-interactive-bg-selectables-default: light-dark(#DBEDFF, #94C9FF);
-  --color-interactive-bg-selectables-hover: light-dark(#F2F8FF, #E3F0FF);
-  
-  --color-interactive-fg-default: #1A1A1A;
-  --color-interactive-fg-selected: light-dark(#3573B1, #244F7A);
-  --color-base-fg-default: light-dark(#1A1A1A, #FAFAFA);
-  --color-base-fg-muted: light-dark(#6B6B6B, #BDBDBD);
+  --color-action-filled-enabled: light-dark(#212121, #4D4D4D);
+  --color-action-filled-onEnabled: #FAFAFA;
+  --color-action-filled-hover: light-dark(#4D4D4D, #6B6B6B);
+  --color-action-filled-active: light-dark(#49586B, #37485D);
+  --color-action-filled-disabled: light-dark(#E0E0E0, #4D4D4D);
+  --color-action-filled-onDisabled: light-dark(#6B6B6B, #BDBDBD);
+
+  --color-action-transparent-enabled: transparent;
+  --color-action-transparent-onEnabled: light-dark(#1A1A1A, #FAFAFA);
+  --color-action-transparent-hover: light-dark(#E0E0E0,#4D4D4D);
+  --color-action-transparent-active: light-dark(#B8BEC6, #37485D);
+  --color-action-transparent-onDisabled: #9E9E9E;
+
+  --color-outline: light-dark(#61B0FF,#BDDEFF);
 
   /* Typography */
   --font-family: 'Roboto', sans-serif;
@@ -28,19 +28,21 @@
   --line-height-normal: 110%;
 
   /* Spacing */
-  --dimension-text-button-large: 36px;
-  --dimension-text-button-medium: 28px;
-  --dimension-text-button-small: 24px;
+  --dimension-button-height-l: 36px;
+  --dimension-button-height-m: 28px;
+  --dimension-button-height-s: 24px;
   --spacing-base-container-m: 12px;
   --spacing-base-container-s: 8px;
+  --spacing-base-container-xs: 4px;
   --spacing-base-container-xxs: 2px;
 
   /* Borders */
   --border-width: 1px;
-  --border-radius-base-container-s: 8px;
+  --border-radius-base-container-m: 8px;
+  --border-base-subtle: var(--border-width) solid #BDBDBD;
+  --border-interactive-transparent: var(--border-width) solid transparent;
   --border-interactive-default: var(--border-width) solid light-dark(#212121, #9E9E9E);
-  --border-interactive-selected: var(--border-width) solid light-dark(#61B0FF, #4694E2);
-  --border-interactive-muted: var(--border-width) solid light-dark(#BDBDBD, #4D4D4D);
+  --border-interactive-disabled: var(--border-width) solid light-dark(#BDBDBD, #4D4D4D);
 
   /* Transitions */
   --transition-speed: 0.2s;
