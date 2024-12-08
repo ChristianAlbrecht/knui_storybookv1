@@ -49,25 +49,23 @@ const classes = computed(() => [
 <style scoped>
 .button {
   text-rendering: geometricPrecision;
-  font-family: var(--font-family);
-  font-size: var(--font-size-medium);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-normal);
+  font: var(--kds-font-interactive-medium-m);
 
-  display: inline-flex;
-  height: var(--dimension-button-height-m);
-  padding: 0 var(--spacing-base-container-s);
+  position: relative;
+  display: flex;
+  height: var(--kds-dimension-action-height-1_75x);
+  padding: 0 var(--kds-spacing-container-0_5x);
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  gap: var(--spacing-base-container-xxs);
+  gap: var(--kds-spacing-container-0_25x);
 
-  border-radius: var(--border-radius-base-container-m);
+  border-radius: var(--kds-border-radius-container-0_37x);
   cursor: pointer;
   transition: all var(--transition-speed) ease;
 
   & .button__label {
-    padding: 0 var(--spacing-base-container-xs);
+    padding: 0 var(--kds-spacing-container-0_25x);
   }
 
   &.button--medium {
@@ -75,19 +73,20 @@ const classes = computed(() => [
   }
 
   &.button--large {
-    height: var(--dimension-button-height-l);
+    height: var(--kds-dimension-action-height-2_25x);
     font-size: var(--font-size-large);
-    padding: 0 var(--spacing-base-container-m);
-    gap: 0;
-
-    & .button__label {
-      padding: 0 var(--spacing-base-container-s);
-    }
+    padding: 0 var(--kds-spacing-container-0_75x);
+    border-radius: var(--kds-border-radius-container-0_50x);
   }
 
   &.button--small {
-    height: var(--dimension-button-height-s);
+    height: var(--kds-dimension-action-height-1_5x);
+    gap: var(--kds-spacing-container-0_12x);
     font-size: var(--font-size-small);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--kds-color-focus-outline);
   }
 
   &:disabled {
@@ -95,68 +94,74 @@ const classes = computed(() => [
   }
 
   &.button--primary {
-    color: var(--color-action-filled-onEnabled);
-    background-color: var(--color-action-filled-enabled);
-    border: var(--border-interactive-transparent);
+    color: var(--kds-color-text-and-icon-primary-inverted);
+    background-color: var(--kds-color-background-primary-bold-initial);
+    border: var(--kds-border-action-transparent);
 
     &:not(:disabled) {
       &:hover {
-        background-color: var(--color-action-filled-hover);
+        background-color: var(--kds-color-background-primary-bold-hover);
       }
       &:active {
-        background-color: var(--color-action-filled-active);
-      }
-      &:focus-visible {
-        border: var(--border-base-subtle);
+        background-color: var(--kds-color-background-primary-bold-active);
       }
     }
 
-    &.button--disabled {
-      background-color: var(--color-action-filled-disabled);
-      color: var(--color-action-filled-onDisabled);
+    /* apply semi transparent overlay for disabled state */
+    &.button--disabled::before {
+      content: "";
+      position: absolute;
+      top: calc(-1 * var(--border-width));
+      left: calc(-1 * var(--border-width));
+      width: calc(100% + 2 * var(--border-width));
+      height: calc(100% + 2 * var(--border-width));
+      background-color: var(--kds-color-background-disabled-default);
+      pointer-events: none;
+      border-radius: inherit;
     }
   }
 
   &.button--secondary {
-    background-color: var(--color-action-transparent-enabled);
-    color: var(--color-action-transparent-onEnabled);
-    border: var(--border-interactive-default);
+    background-color: var(--kds-color-background-neutral-initial);
+    color: var(--kds-color-text-and-icon-neutral);
+    border: var(--kds-border-action-default);
 
     &:not(:disabled) {
       &:hover {
-        background-color: var(--color-action-transparent-hover);
+        background-color: var(--kds-color-background-primary-hover);
+        color: var(--kds-color-text-and-icon-primary-bold);
       }
       &:active {
-        background-color: var(--color-action-transparent-active);
+        background-color: var(--kds-color-background-primary-active);
+        color: var(--kds-color-text-and-icon-primary);
       }
     }
 
     &.button--disabled {
-      color: var(--color-action-transparent-onDisabled);
-      border: var(--border-interactive-muted);
+      color: var(--kds-color-text-and-icon-disabled);
+      border: var(--kds-border-action-disabled);
     }
   }
 
   &.button--tertiary {
-    background-color: var(--color-action-transparent-enabled);
-    border: var(--border-interactive-transparent);
+    background-color: var(--kds-color-background-neutral-initial);
+    border: var(--kds-border-action-transparent);
+    color: var(--kds-color-text-and-icon-neutral);
 
     &:not(:disabled) {
       &:hover {
-        background-color: var(--color-action-transparent-hover);
+        background-color: var(--kds-color-background-primary-hover);
+        color: var(--kds-color-text-and-icon-primary-bold);
       }
       &:active {
-        background-color: var(--color-action-transparent-active);
+        background-color: var(--kds-color-background-primary-active);
+        color: var(--kds-color-text-and-icon-primary);
       }
     }
 
     &.button--disabled {
-      color: var(--color-action-transparent-onDisabled);
+      color: var(--kds-color-text-and-icon-disabled);
     }
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--color-outline);
   }
 
   &.button__icon {
